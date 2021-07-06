@@ -38,7 +38,7 @@ public class SimpleSizeBasedFileStoreService {
 	}
 
 	public String updateFile(String id, MultipartFile file) {
-		// TODO GridFs does not support/recommend file uploads. If this is needed try version
+		// TODO GridFs does not support/recommend file updates. If this is needed try version
 		// the file with each add/update and store new versions of file for each update
 		String result = null;
 		if(null != gridFsTemplate.findOne(new Query(Criteria.where("_id").is(id)))) {
