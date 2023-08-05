@@ -25,7 +25,7 @@ public class DocumentStoreService {
 		return simpleFileStoreFactory.getVideoFileStore().getVideos();
 	}
 	
-	public String handleDocumentUpload(MultipartFile file) {
+	public String handleDocumentUpload(MultipartFile file, String source) {
 		String result = simpleFileStoreFactory.getFileStore(file.getContentType()).addFile(file);
 		return result;
 	}

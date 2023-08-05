@@ -3,6 +3,7 @@ package com.bitnbytes.documentstore.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,14 +22,14 @@ public class DocumentUploadController {
 		this.documentStoreService = documentStoreService;
 	}
 	
-	/**
+	/**æ
 	 *
 	 * @author Pankaj Bhushan
 	 * This implementation handles file upload
 	 *
 	 **/
 	@PostMapping("/upload")
-	public String handleDocumentUpload(@RequestParam("file") MultipartFile file) {
-		return documentStoreService.handleDocumentUpload(file);
+	public String handleDocumentUpload(@RequestParam("file") MultipartFile file, @RequestHeader final String source) {
+		return documentStoreService.handleDocumentUpload(file, source);
 	}
 }
